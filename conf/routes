@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                   controllers.Application.index
+
+GET     /authenticate                       controllers.Authentication.authenticate
+GET     /openidcallback                     controllers.Authentication.openIDCallback
+
+GET     /boards                             controllers.Boards.findAll
+GET     /boards/:id                         controllers.Boards.findOne(id)
+POST    /boards                             controllers.Boards.create
+
+GET     /columns                            controllers.Columns.findAll
+GET     /columns/:id                        controllers.Columns.findOne(id)
+POST    /columns                            controllers.Columns.create
+
+GET     /cards                              controllers.Cards.findAll
+GET     /cards/:id                          controllers.Cards.findOne(id)
+POST    /cards                              controllers.Cards.create
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                       controllers.Assets.at(path="/public", file)
